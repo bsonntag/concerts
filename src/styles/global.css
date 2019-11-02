@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+html {
+  /* Colors */
+  --text-color: black;
+  --background-color: white;
+
+  /* Typography */
+  --font-size: 16px;
+  --scale: 1.5;
+
+  /* Spacing */
+  --tiny-space: calc(0.5rem * var(--scale));
+  --small-space: calc(1rem * var(--scale));
+  --medium-space: calc(2rem * var(--scale));
+  --large-space: calc(3rem * var(--scale));
+
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) * var(--scale));
+}
+
+body {
+  background-color: var(--background-color);
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@import './typography.css';

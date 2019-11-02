@@ -1,0 +1,4 @@
+!.*rc.js
+.cache
+build
+dist

@@ -1,0 +1,33 @@
+h1,
+.heading {
+  font-size: calc(1rem * var(--scale) * var(--scale) * var(--scale));
+  font-weight: normal;
+  letter-spacing: -0.75px;
+  line-height: var(--large-space);
+  margin-top: var(--small-space);
+  margin-bottom: var(--medium-space);
+}
+
+h2,
+.title {
+  font-size: calc(1rem * var(--scale) * var(--scale));
+  font-weight: bold;
+  letter-spacing: -0.25px;
+  line-height: var(--medium-space);
+  margin-top: var(--medium-space);
+  margin-bottom: var(--small-space);
+}
+
+h3,
+.subtitle {
+  font-size: calc(1rem * var(--scale));
+  font-weight: normal;
+  line-height: var(--medium-space);
+  margin-top: var(--small-space);
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--small-space);
+}
