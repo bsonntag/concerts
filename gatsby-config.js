@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'Benjamim Sonntag - Concert diary',
@@ -6,6 +8,13 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'un2l5tfpi9f5',
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
