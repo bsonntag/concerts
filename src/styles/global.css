@@ -2,11 +2,11 @@
 
 html {
   /* Colors */
-  --text-color: black;
-  --background-color: white;
+  --text-color: white;
+  --background-color: hsl(240, 5%, 15%);
 
   /* Typography */
-  --font-size: 16px;
+  --font-size: 14px;
   --scale: 1.5;
 
   /* Spacing */
@@ -41,4 +41,15 @@ ul {
   padding: 0;
 }
 
+@media (min-width: 480px) {
+  html {
+    --font-size: 16px;
+  }
+
+  body {
+    text-align: center;
+  }
+}
+
+@import './layout.css';
 @import './typography.css';

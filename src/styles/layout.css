@@ -1,0 +1,6 @@
+.container {
+  width: 100%;
+  max-width: calc(600px + 2 * var(--medium-space));
+  padding: var(--medium-space);
+  margin: 0 auto;
+}
