@@ -2,8 +2,8 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'Benjamim Sonntag - Concert diary',
-    description: "A list of the music concerts I've been to.",
+    title: 'Benjamim Sonntag - Concerts',
+    description: "A list of the music concerts and festivals I've been to.",
     author: 'Benjamim Sonntag',
   },
   plugins: [
@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Benjamim Sonntag - Concert diary',
-        short_name: 'Concert diary',
+        name: 'Benjamim Sonntag - Concerts',
+        short_name: 'Concerts',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',

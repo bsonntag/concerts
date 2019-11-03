@@ -1,8 +1,8 @@
 {
-  "name": "concert-diary",
+  "name": "concerts",
   "version": "0.0.0",
   "private": true,
-  "description": "A list of the music concerts I've been to.",
+  "description": "A list of the music concerts and festials I've been to.",
   "license": "MIT",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "scripts": {
