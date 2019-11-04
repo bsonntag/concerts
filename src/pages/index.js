@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Metatags } from '../components/metatags';
 import { PageLayout } from '../components/page-layout';
 
@@ -10,15 +10,17 @@ const query = graphql`
       nodes {
         id
         name
-        date
-        bands
         location
+        days {
+          date
+          bands
+        }
       }
     }
   }
 `;
 
-const ListItem = styled.li`
+const ConcertsListItem = styled.li`
   &::before {
     content: '';
     background-color: white;
@@ -27,6 +29,31 @@ const ListItem = styled.li`
     width: 100%;
     margin: var(--medium-space) 0;
   }
+`;
+
+const ConcertTitle = styled.h2`
+  margin-bottom: 0;
+`;
+
+const DaysList = styled.ol`
+  display: flex;
+  flex-flow row wrap;
+  gap: var(--small-space);
+  justify-content: center;
+
+  ${({ numberOfDays }) => {
+    if (numberOfDays % 4 === 0) {
+      return css`
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+      `;
+    }
+  }}
+`;
+
+const DaysListItem = styled.li`
+  flex: 1 0 184px;
+  white-space: nowrap;
 `;
 
 function HomePage() {
@@ -39,18 +66,23 @@ function HomePage() {
 
       <ol>
         {data.allContentfulConcert.nodes.map(concert => (
-          <ListItem key={concert.id}>
-            <h2>{concert.name}</h2>
-            <p>
-              {concert.date} - {concert.location}
-            </p>
+          <ConcertsListItem key={concert.id}>
+            <ConcertTitle>{concert.name}</ConcertTitle>
+            <p>{concert.location}</p>
 
-            <ul>
-              {concert.bands.map(band => (
-                <li key={band}>{band}</li>
+            <DaysList numberOfDays={concert.days.length}>
+              {concert.days.map(day => (
+                <DaysListItem key={day.date}>
+                  <p>{day.date}</p>
+                  <ol>
+                    {day.bands.map(band => (
+                      <li key={band}>{band}</li>
+                    ))}
+                  </ol>
+                </DaysListItem>
               ))}
-            </ul>
-          </ListItem>
+            </DaysList>
+          </ConcertsListItem>
         ))}
       </ol>
     </PageLayout>
