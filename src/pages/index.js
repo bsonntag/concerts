@@ -6,7 +6,7 @@ import { PageLayout } from '../components/page-layout';
 
 const query = graphql`
   query {
-    allContentfulConcert(sort: { fields: date, order: DESC }) {
+    allContentfulConcert(sort: { fields: days___date, order: DESC }) {
       nodes {
         id
         name
