@@ -64,6 +64,10 @@ function HomePage() {
       <Metatags />
       <h1>Concerts</h1>
 
+      <p>
+        This is the list of music shows and festivals I&apos;ve been to so far.
+      </p>
+
       <ol>
         {data.allContentfulConcert.nodes.map(concert => (
           <ConcertsListItem key={concert.id}>
